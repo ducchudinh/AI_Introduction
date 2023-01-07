@@ -16,6 +16,7 @@ CatBoost_model = CatBoostClassifier(
     custom_loss=['Accuracy'],
     eval_metric='Accuracy' 
 )
+
 # train
 CatBoost_model.fit(
     X_train, y_train,
@@ -24,8 +25,14 @@ CatBoost_model.fit(
     logging_level='Silent',
     plot=False
 )
+
 # test
 y_pred = CatBoost_model.predict(X_test)
+
 # result
 print(classification_report(y_pred,y_test))
 print('accuracy_score',accuracy_score(y_pred, y_test))
+
+# save model
+import pickle
+pickle.dump(CatBoost_model, open('CatBoost_trained_model', 'wb'))

@@ -48,3 +48,38 @@ def data_prepare(path):
     X_train, X_valid, y_train, y_valid =  train_test_split(X_train, y_train, test_size=VAL_SIZE, stratify=y_train, random_state=SEED)  
 
     return X_train, y_train, X_valid, y_valid, X_test, y_test
+
+def prepare_infer_data(attribute_values):
+
+    if attribute_values[0] == 'Female':
+        attribute_values[0] = 1
+    else:
+        attribute_values[0] = 0
+
+    if attribute_values[1] == 'Loyal Customer':
+        attribute_values[1] = 1
+    else:
+        attribute_values[1] = 0
+
+    if attribute_values[3] == 'Business travel':
+        attribute_values[3] = 2
+    else:
+        attribute_values[3] = 1
+    
+    if attribute_values[4] == 'Business':
+        attribute_values[4] = 3
+    elif attribute_values[4] == 'Eco Plus':
+        attribute_values[4] = 2
+    else:
+        attribute_values[4] = 1
+    
+    for i in range(6, 20):
+        attribute_values[i] = int(attribute_values[i])
+
+    return attribute_values
+
+# path = 'data/Invistico_Airline.csv'
+# X_train, y_train, X_valid, y_valid, X_test, y_test = data_prepare(path)
+# print(type(X_valid))
+# print(X_valid[0])
+# print(X_valid[1])
