@@ -14,7 +14,7 @@ with col1:
     option = st.selectbox('Gender', ('Male', 'Female'))
     attribute_values.append(option)
 with col2:
-    option = st.selectbox('Customer Type', ('Loyal Customer', 'Disloyal Customer'))
+    option = st.selectbox('Customer Type', ('Loyal Customer', 'disloyal Customer'))
     attribute_values.append(option)
 with col3:
     age = st.slider('Age', 0, 130, 30)
@@ -88,7 +88,6 @@ with col22:
     attribute_values.append(number)
 
 attribute_values = dp.prepare_infer_data(attribute_values)
-# st.write(attribute_values)
 
 
 st.header('OUTPUT')

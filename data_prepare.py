@@ -77,9 +77,3 @@ def prepare_infer_data(attribute_values):
         attribute_values[i] = int(attribute_values[i])
 
     return attribute_values
-
-# path = 'data/Invistico_Airline.csv'
-# X_train, y_train, X_valid, y_valid, X_test, y_test = data_prepare(path)
-# print(type(X_valid))
-# print(X_valid[0])
-# print(X_valid[1])
